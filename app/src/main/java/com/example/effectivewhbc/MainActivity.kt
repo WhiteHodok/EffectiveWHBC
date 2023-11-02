@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -21,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ComposableTarget
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -32,10 +34,34 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            InsertLogo()
             DotaUpperBackgroundPreview()
 
         }
     }
+}
+
+
+
+
+@Preview
+@Composable
+fun InsertLogo() {
+
+    Row(Modifier.padding(start = 21.dp)) {
+
+        Image(
+            painter = painterResource(id = R.drawable.ggroup82),
+            contentDescription = "image description",
+            modifier = Modifier
+                .padding(0.dp)
+                .width(88.dp)
+                .height(95.dp),
+            contentScale = ContentScale.None
+        )
+
+    }
+
 }
 
 @Preview
@@ -72,17 +98,22 @@ public fun DotaUpperBackground() {
 @Composable
 fun DotaUpperBackgroundPreview() {
 
-    Row(){
-        Image(painter = painterResource(id = R.drawable.rectangle22),
-            contentDescription = "image description",
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(930.dp),
-            alignment = Alignment.Center,
-            contentScale = ContentScale.FillBounds)
+
+        Row() {
+            Image(
+                painter = painterResource(id = R.drawable.rectangle22),
+                contentDescription = "image description",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(930.dp),
+                alignment = Alignment.Center,
+                contentScale = ContentScale.FillBounds
+            )
 
 
-}
+        }
+
     DotaUpperBackground()
 }
+
 
