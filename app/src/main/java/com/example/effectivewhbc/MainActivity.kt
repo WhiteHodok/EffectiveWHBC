@@ -3,117 +3,61 @@ package com.example.effectivewhbc
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.ComposableTarget
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import com.example.effectivewhbc.ui.theme.EffectiveWHBCTheme
+import androidx.core.view.WindowCompat
+import com.example.androidlab1.ui.theme.AndroidLab1Theme
+import com.example.effectivewhbc.ui.gamescreen.DotaScreen
+import com.example.effectivewhbc.ui.theme.AppTheme
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
         setContent {
-            InsertLogo()
-            DotaUpperBackgroundPreview()
-
+            MainScreen()
         }
     }
 }
 
-
-
-
-@Preview
 @Composable
-fun InsertLogo() {
-
-    Row(Modifier.padding(start = 21.dp)) {
-
-        Image(
-            painter = painterResource(id = R.drawable.ggroup82),
-            contentDescription = "image description",
-            modifier = Modifier
-                .padding(0.dp)
-                .width(88.dp)
-                .height(95.dp),
-            contentScale = ContentScale.None
-        )
-
+fun MainScreen() {
+    AndroidLab1Theme {
+        ApplySystemBarColors()
+        // A surface container using the 'background' color from the theme
+        Surface(
+            color = AppTheme.BgColors.primary,
+            modifier = Modifier.fillMaxSize(),
+        ) {
+            DotaScreen()
+        }
     }
-
 }
 
-@Preview
 @Composable
-fun ShadowGr(){
-    Image(
-        painter = painterResource(id = R.drawable.rectangle31),
-        contentDescription = "Top Image",
-        modifier = Modifier
-            .fillMaxWidth()
-            .height(126.dp),
-        alignment = Alignment.Center,
-        contentScale = ContentScale.FillBounds)
+private fun ApplySystemBarColors() {
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+        systemUiController.setStatusBarColor(color = Color.Transparent)
+        systemUiController.setNavigationBarColor(color = Color.Transparent)
+    }
 }
 
-
-@Preview
+@Preview(
+    showBackground = true,
+)
 @Composable
-public fun DotaUpperBackground() {
-
-            Row(){
-                Image(painter = painterResource(id = R.drawable.image16),
-                    contentDescription = "image description",
-                    modifier = Modifier
-                        .width(628.dp)
-                        .height(368.07339.dp)
-                    )
-            }
-    ShadowGr()
-        }
-
-
-@Preview
-@Composable
-fun DotaUpperBackgroundPreview() {
-
-
-        Row() {
-            Image(
-                painter = painterResource(id = R.drawable.rectangle22),
-                contentDescription = "image description",
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(930.dp),
-                alignment = Alignment.Center,
-                contentScale = ContentScale.FillBounds
-            )
-
-
-        }
-
-    DotaUpperBackground()
+fun MainScreenPreview() {
+    AndroidLab1Theme {
+        MainScreen()
+    }
 }
-
-

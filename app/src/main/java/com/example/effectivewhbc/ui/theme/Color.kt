@@ -1,4 +1,4 @@
-package com.example.effectivewhbc.ui.theme
+package com.example.androidlab1.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
