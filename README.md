@@ -5,6 +5,9 @@
 
 - Линк https://github.com/WhiteHodok/ASDotaScreen/tree/dev
 
+
+# Stage 1
+
 # Всё очень плохо 
 
 - Ничего нормально не работает, потрачено на это 3 дня :( (на 30.10.23)
@@ -41,3 +44,36 @@
 - Не надо было изучать вёрстку через XML (из-за этого 3 дня работы ушли впустую)
 
 - В нете очень мало хороших гайдов на русском , но вот этот достоин внимания(по нему я и делал то, что получилось)  (https://www.youtube.com/watch?v=DzUrk9hEoGw&list=PLmjT2NFTgg1cyNFqS2ST6nTDxZH_bYjba&index=3)
+
+
+# Stage 3  
+
+- Получается вот такая картина 
+
+![studio64_AAMHPVAjIW](https://github.com/WhiteHodok/EffectiveWHBC/assets/39564937/5c4f8189-e03a-477f-ab32-6e261d0e1335)
+
+
+- Добавлен Accompanist 
+
+
+Конец этапа 07.11.2023
+
+
+
+# Final stage 
+
+- Полностью доработанное приложение с 2-мя цветовыми схемами (чёрная/светлая)
+
+![studio64_G23cCu05CQ](https://github.com/WhiteHodok/EffectiveWHBC/assets/39564937/21ec0a0b-c00b-48e7-b362-ad7b452af1d8)
+
+
+## Как развернуть приложение через Android Studio? 
+
+``` git clone https://github.com/WhiteHodok/EffectiveWHBC/main ```
+
+
+## Где взять .apk файл ?
+
+```EffectiveWHBC\app\build\outputs\apk\debug```
+
+
