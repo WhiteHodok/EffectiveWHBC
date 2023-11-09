@@ -69,7 +69,7 @@
 
 ## Как развернуть приложение через Android Studio? 
 
-``` git clone https://github.com/WhiteHodok/EffectiveWHBC/main ```
+``` git clone https://github.com/WhiteHodok/EffectiveWHBC ```
 
 
 ## Где взять .apk файл ?
